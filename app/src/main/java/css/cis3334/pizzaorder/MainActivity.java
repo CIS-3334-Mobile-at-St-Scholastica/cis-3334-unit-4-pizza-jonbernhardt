@@ -42,10 +42,11 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
     @Override
     public void updateView(String orderStatus) {
 
-        txtStatus.setText("Order Status" + orderStatus);
+        txtStatus.setText("Order Status: " + orderStatus);
     }
 
     public void onClickOrder(View view) {
+        pizzaOrderSystem.setDelivery( chkbxDelivery.isChecked() );
         String topping = spinnerToppings.getSelectedItem().toString();
         String size = "large";
         if (rbSmall.isChecked()) {
