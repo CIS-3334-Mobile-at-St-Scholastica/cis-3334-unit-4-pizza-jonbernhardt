@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
     CheckBox chkbxDelivery;
     TextView txtTotal;
     TextView txtStatus;
+    Spinner spinnerToppings;
     PizzaOrderInterface pizzaOrderSystem;
 
     @Override
@@ -33,17 +35,26 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
 
         txtTotal = (TextView) findViewById(R.id.textViewTotal);
         txtStatus = (TextView) findViewById(R.id.textViewStatus);
-
+        spinnerToppings = (Spinner) findViewById(R.id.spinnerToppings);
         pizzaOrderSystem = new PizzaOrder(this);
     }
 
     @Override
     public void updateView(String orderStatus) {
+
         txtStatus.setText("Order Status" + orderStatus);
     }
 
     public void onClickOrder(View view) {
-        String orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni","Large", false);
+        String topping = spinnerToppings.getSelectedItem().toString();
+        String size = "large";
+        if (rbSmall.isChecked()) {
+            size = "small";
+        }
+        if (rbMedium.isChecked()) {
+            size = "medium";
+        }
+        String orderDescription = pizzaOrderSystem.OrderPizza(topping,size, false);
         //display a pop up message for a long period of time
         Toast.makeText(getApplicationContext(), "You have ordered a "+orderDescription , Toast.LENGTH_LONG).show();
         txtTotal.setText("Total Due: " + pizzaOrderSystem.getTotalBill().toString());
