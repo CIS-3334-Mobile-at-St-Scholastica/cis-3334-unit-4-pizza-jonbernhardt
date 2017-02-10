@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="css.cis3334.pizzaorder.MainActivity">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:text="@string/small_pizza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonSmall"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="MediumPizza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonMedium"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Large Pizza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonLarge"
+            android:layout_weight="1" />
+
+    </RadioGroup>
+
+    <CheckBox
+        android:text="CheckBoxExtraCheese"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxCheese"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:text="Order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonOrder"
+        android:onClick="onClickOrder" />
+
+    <CheckBox
+        android:text="CheckBoxDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxDeluvery" />
+
+    <TextView
+        android:text="Total Due:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTotal" />
+
+    <TextView
+        android:text="Order Status: Nothing ordered yet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewStatus" />
+
+
+</LinearLayout>
