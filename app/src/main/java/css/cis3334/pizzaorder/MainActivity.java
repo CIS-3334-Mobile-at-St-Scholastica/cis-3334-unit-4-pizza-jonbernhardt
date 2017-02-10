@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
         if (rbMedium.isChecked()) {
             size = "medium";
         }
-        String orderDescription = pizzaOrderSystem.OrderPizza(topping,size, false);
+        String orderDescription = pizzaOrderSystem.OrderPizza(topping, size, chkbxCheese.isChecked());
         //display a pop up message for a long period of time
         Toast.makeText(getApplicationContext(), "You have ordered a "+orderDescription , Toast.LENGTH_LONG).show();
         txtTotal.setText("Total Due: " + pizzaOrderSystem.getTotalBill().toString());
