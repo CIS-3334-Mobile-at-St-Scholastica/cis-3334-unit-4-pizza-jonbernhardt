@@ -13,7 +13,7 @@ public interface PizzaOrderInterface {
 
     String OrderPizza(String topping, String strSize, boolean extraCheese);
     Double getTotalBill();
-    Double getPrice(PizzaSizes size);
+    Double getPrice(Pizza.pizzaSize size);
     Double getExtraCheesePrice();
     void setDelivery(boolean deliver);
     boolean getDelivery();

@@ -27,20 +27,26 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // create an pizza order system to use in the class for ordering pizzas.
         pizzaOrderSystem = new PizzaOrder(this);
+        // Set up our radio buttons
         rbSmall = (RadioButton) findViewById(R.id.radioButtonSmall);
         rbMedium = (RadioButton) findViewById(R.id.radioButtonMedium);
         rbLarge = (RadioButton) findViewById(R.id.radioButtonLarge);
-        rbSmall.append(" -- Price: $" + pizzaOrderSystem.getPrice(PizzaOrderInterface.PizzaSizes.SMALL));
-        rbMedium.append(" -- Price: $" + pizzaOrderSystem.getPrice(PizzaOrderInterface.PizzaSizes.MEDIUM));
-        rbLarge.append(" -- Price: $" + pizzaOrderSystem.getPrice(PizzaOrderInterface.PizzaSizes.LARGE));
+        // review the lines below during the particpation activy and uncomment them
+        rbSmall.append(" -- Price: $" + pizzaOrderSystem.getPrice(Pizza.pizzaSize.SMALL));
+        rbMedium.append(" -- Price: $" + pizzaOrderSystem.getPrice(Pizza.pizzaSize.MEDIUM));
+        rbLarge.append(" -- Price: $" + pizzaOrderSystem.getPrice(Pizza.pizzaSize.LARGE));
 
+        // Set up the Check Boxes
         chkbxCheese = (CheckBox) findViewById(R.id.checkBoxCheese);
         chkbxDelivery = (CheckBox) findViewById(R.id.checkBoxDeluvery);
 
+        // Set up the TextViews
         txtTotal = (TextView) findViewById(R.id.textViewTotal);
         txtStatus = (TextView) findViewById(R.id.textViewStatus);
         txtPizzasOrdered = (TextView) findViewById(R.id.textViewPizzasOrdered);
+        // Set up the Spinner
         spinnerToppings = (Spinner) findViewById(R.id.spinnerToppings);
 
     }
@@ -52,19 +58,17 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
     }
 
     public void onClickOrder(View view) {
-        pizzaOrderSystem.setDelivery( chkbxDelivery.isChecked() );
-        String topping = spinnerToppings.getSelectedItem().toString();
-        String size = "large";
-        if (rbSmall.isChecked()) {
-            size = "small";
-        }
-        if (rbMedium.isChecked()) {
-            size = "medium";
-        }
-        String orderDescription = pizzaOrderSystem.OrderPizza(topping, size, chkbxCheese.isChecked());
+        // ****** Students need to add code here to get information from the UI widgets...
+
+        // ****** Students need to modify the call to OrderPizza to order the type of pizza the user selects using the UI widgets
+        String orderDescription = pizzaOrderSystem.OrderPizza("Peperoni", "large", false  );
+
+
         //display a pop up message for a long period of time
         Toast.makeText(getApplicationContext(), "You have ordered a "+orderDescription , Toast.LENGTH_LONG).show();
+        // get the order total from the order system
         txtTotal.setText("Total Due: " + pizzaOrderSystem.getTotalBill().toString());
+        // add this pizza to the textview the lists the pizzas
         txtPizzasOrdered.append(orderDescription+"\n");
 
     }

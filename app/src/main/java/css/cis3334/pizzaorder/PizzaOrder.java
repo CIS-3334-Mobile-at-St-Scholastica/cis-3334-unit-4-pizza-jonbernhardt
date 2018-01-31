@@ -51,15 +51,15 @@ public class PizzaOrder implements PizzaOrderInterface {
     }
 
     @Override
-    public Double getPrice(PizzaSizes size) {
+    public Double getPrice(Pizza.pizzaSize size) {
         Double price = 0.0;
-        if (size == PizzaSizes.SMALL) {
+        if (size == Pizza.pizzaSize.SMALL) {
             price = Pizza.SMALL_PRICE;
         }
-        if (size == PizzaSizes.MEDIUM) {
+        if (size == Pizza.pizzaSize.MEDIUM) {
             price =  Pizza.MEDIUM_PRICE;
         }
-        if (size == PizzaSizes.LARGE) {
+        if (size == Pizza.pizzaSize.LARGE) {
             price = Pizza.LARGE_PRICE;
         }
         return price;
