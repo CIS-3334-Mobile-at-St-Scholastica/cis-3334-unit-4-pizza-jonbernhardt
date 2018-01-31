@@ -71,10 +71,18 @@
         android:id="@+id/textViewTotal" />
 
     <TextView
-        android:text="Order Status: Nothing ordered yet"
+        android:id="@+id/textViewStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewStatus" />
+        android:text="Order Status: Nothing ordered yet"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+
+    <TextView
+        android:id="@+id/textViewPizzasOrdered"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:singleLine="false"
+        android:text="Pizzas Ordered \n" />
 
 
 </LinearLayout>

@@ -5,10 +5,10 @@ package css.cis3334.pizzaorder;
  */
 public class Pizza {
     public enum pizzaSize { SMALL, MEDIUM, LARGE};
-    public static final Double SMALL_PRICE = 7.00;
-    public static final Double MEDIUM_PRICE = 9.00;
-    public static final Double LARGE_PRICE = 11.00;
-    public static final Double EXTRA_CHEESE_PRICE = 1.50;
+    public static final Double SMALL_PRICE = 7.99;
+    public static final Double MEDIUM_PRICE = 9.99;
+    public static final Double LARGE_PRICE = 11.99;
+    public static final Double EXTRA_CHEESE_PRICE = 1.45;
 
     private String topping;
     private boolean extraCheese;

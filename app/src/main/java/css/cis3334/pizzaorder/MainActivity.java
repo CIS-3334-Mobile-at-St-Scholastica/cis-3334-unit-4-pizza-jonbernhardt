@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
     CheckBox chkbxDelivery;
     TextView txtTotal;
     TextView txtStatus;
+    TextView txtPizzasOrdered;
     Spinner spinnerToppings;
     PizzaOrderInterface pizzaOrderSystem;
 
@@ -26,21 +27,26 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        pizzaOrderSystem = new PizzaOrder(this);
         rbSmall = (RadioButton) findViewById(R.id.radioButtonSmall);
         rbMedium = (RadioButton) findViewById(R.id.radioButtonMedium);
         rbLarge = (RadioButton) findViewById(R.id.radioButtonLarge);
+        rbSmall.append(" -- Price: $" + pizzaOrderSystem.getPrice(PizzaOrderInterface.PizzaSizes.SMALL));
+        rbMedium.append(" -- Price: $" + pizzaOrderSystem.getPrice(PizzaOrderInterface.PizzaSizes.MEDIUM));
+        rbLarge.append(" -- Price: $" + pizzaOrderSystem.getPrice(PizzaOrderInterface.PizzaSizes.LARGE));
 
         chkbxCheese = (CheckBox) findViewById(R.id.checkBoxCheese);
         chkbxDelivery = (CheckBox) findViewById(R.id.checkBoxDeluvery);
 
         txtTotal = (TextView) findViewById(R.id.textViewTotal);
         txtStatus = (TextView) findViewById(R.id.textViewStatus);
+        txtPizzasOrdered = (TextView) findViewById(R.id.textViewPizzasOrdered);
         spinnerToppings = (Spinner) findViewById(R.id.spinnerToppings);
-        pizzaOrderSystem = new PizzaOrder(this);
+
     }
 
     @Override
-    public void updateView(String orderStatus) {
+    public void updateOrderStatusInView(String orderStatus) {
 
         txtStatus.setText("Order Status: " + orderStatus);
     }
@@ -59,5 +65,7 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
         //display a pop up message for a long period of time
         Toast.makeText(getApplicationContext(), "You have ordered a "+orderDescription , Toast.LENGTH_LONG).show();
         txtTotal.setText("Total Due: " + pizzaOrderSystem.getTotalBill().toString());
+        txtPizzasOrdered.append(orderDescription+"\n");
+
     }
 }
