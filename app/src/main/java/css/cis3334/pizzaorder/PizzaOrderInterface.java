@@ -5,12 +5,6 @@ package css.cis3334.pizzaorder;
  */
 public interface PizzaOrderInterface {
 
-        public static enum PizzaSizes{
-            SMALL,
-            MEDIUM,
-            LARGE;
-        }
-
     String OrderPizza(String topping, String strSize, boolean extraCheese);
     Double getTotalBill();
     Double getPrice(Pizza.pizzaSize size);
