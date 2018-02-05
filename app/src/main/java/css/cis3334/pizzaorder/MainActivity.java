@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
         rbMedium = (RadioButton) findViewById(R.id.radioButtonMedium);
         rbLarge = (RadioButton) findViewById(R.id.radioButtonLarge);
         // review the lines below during the particpation activy and uncomment them
-        //rbSmall.append(" -- Price: $" + pizzaOrderSystem.getPrice(Pizza.pizzaSize.SMALL));
-        //rbMedium.append(" -- Price: $" + pizzaOrderSystem.getPrice(Pizza.pizzaSize.MEDIUM));
-        //rbLarge.append(" -- Price: $" + pizzaOrderSystem.getPrice(Pizza.pizzaSize.LARGE));
+        rbSmall.append(" -- Price: $" + pizzaOrderSystem.getPrice(Pizza.pizzaSize.SMALL));
+        rbMedium.append(" -- Price: $" + pizzaOrderSystem.getPrice(Pizza.pizzaSize.MEDIUM));
+        rbLarge.append(" -- Price: $" + pizzaOrderSystem.getPrice(Pizza.pizzaSize.LARGE));
 
         // Set up the Check Boxes
         chkbxCheese = (CheckBox) findViewById(R.id.checkBoxCheese);
