@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\m069642\Google Drive\AndroidStudioProjects\cis-3334-unit-4-pizza-jonbernhardt\app\app.iml" filepath="C:\Users\m069642\Google Drive\AndroidStudioProjects\cis-3334-unit-4-pizza-jonbernhardt\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cis-3334-unit-4-pizza-jonbernhardt.iml" filepath="$PROJECT_DIR$/cis-3334-unit-4-pizza-jonbernhardt.iml" />
-      <module fileurl="file://C:\Users\m069642\Google Drive\AndroidStudioProjects\cis-3334-unit-4-pizza-jonbernhardt\cis-3334-unit-4-pizza-start.iml" filepath="C:\Users\m069642\Google Drive\AndroidStudioProjects\cis-3334-unit-4-pizza-jonbernhardt\cis-3334-unit-4-pizza-start.iml" />
     </modules>
   </component>
 </project>
